@@ -20,7 +20,6 @@
       <ListView Grid.Row="1" x:Name="listCharacters"
 				HorizontalOptions="FillAndExpand"
 				VerticalOptions="FillAndExpand"
-				ItemsSource="{Binding CharacterList}"
 				CachingStrategy="RecycleElement">
 
         <ListView.RowHeight>
@@ -31,20 +30,20 @@
           </OnPlatform>
         </ListView.RowHeight>
         <ListView.ItemTemplate>
-          <DataTemplate>
-            <!--			    		<ImageCell 
+          <!--<DataTemplate>
+            			    	<ImageCell 
 							Text="{Binding Name}" 
-							ImageSource="{Binding Thumbnail}"></ImageCell>-->
+							ImageSource="{Binding Thumbnail}"></ImageCell>
 
-            <ViewCell>
+            --><!--<ViewCell>
               <ViewCell.View>
                 <StackLayout Orientation="Horizontal">
                   <Image Source="{Binding Thumbnail}" HeightRequest="80" WidthRequest="80"></Image>
                   <Label Text="{Binding Name}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" VerticalTextAlignment="Start" HorizontalTextAlignment="Start"></Label>
                 </StackLayout>
               </ViewCell.View>
-            </ViewCell>
-          </DataTemplate>
+            </ViewCell>--><!--
+          </DataTemplate>-->
         </ListView.ItemTemplate>
       </ListView>
 
