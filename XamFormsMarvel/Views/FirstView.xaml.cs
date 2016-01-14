@@ -31,6 +31,7 @@ namespace XamFormsMarvel.Views
 //			Label lbl = new Label ();
 //			lbl.HorizontalTextAlignment = TextAlignment.Start
 
+
 			BindingContext = _vm;
 			_vm.LoadData();
 		}

@@ -1,16 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
 
 using Xamarin.Forms;
 using XamFormsMarvel.Services;
-using XamFormsMarvel.ViewModels;
 using XamFormsMarvel.Views;
 
 namespace XamFormsMarvel
 {
-	public class App : Application
+	public partial class App : Application
 	{
 		public App ()
 		{
+			InitializeComponent (); 
+
 			// Register our Services
 			DependencyService.Register<IMarvelApiService, MarvelApiService> ();
 

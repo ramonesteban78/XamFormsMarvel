@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 			xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 			x:Class="XamFormsMarvel.Views.FirstView"
+			xmlns:local="clr-namespace:XamFormsMarvel.Views;assembly=XamFormsMarvel"
 			Title="Marvel Characters">
 	<ContentPage.Content>
 		<Grid>
@@ -21,26 +22,21 @@
 				HorizontalOptions="FillAndExpand"
 				VerticalOptions="FillAndExpand"
 				ItemsSource="{Binding CharacterList}"
-				CachingStrategy="RecycleElement">
+				CachingStrategy="RecycleElement" 
+				RowHeight="80" 
+				SeparatorVisibility="None">
 
-				<ListView.RowHeight>
+<!--				<ListView.RowHeight>
 			        <OnPlatform x:TypeArguments="x:Int32">
 			            <OnPlatform.iOS>80</OnPlatform.iOS>
 			            <OnPlatform.Android>70</OnPlatform.Android>
 			            <OnPlatform.WinPhone>70</OnPlatform.WinPhone>
 			        </OnPlatform>
-			    </ListView.RowHeight>
+			    </ListView.RowHeight>-->
 			    <ListView.ItemTemplate>
 			    	<DataTemplate>
-<!--			    		<ImageCell 
-							Text="{Binding Name}" 
-							ImageSource="{Binding Thumbnail}"></ImageCell>-->
-
-						<ViewCell>
-							<StackLayout Orientation="Horizontal">
-								<Image Source="{Binding Thumbnail}" HeightRequest="80" WidthRequest="80"></Image>
-								<Label Text="{Binding Name}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" VerticalTextAlignment="Start" HorizontalTextAlignment="Start"></Label>
-							</StackLayout>
+			    		<ViewCell>
+							<local:CharacterTemplate />
 						</ViewCell>
 			    	</DataTemplate>
 			    </ListView.ItemTemplate>
