@@ -2431,32 +2431,32 @@ namespace XamFormsMarvel.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f080047
-			public const int abc_background_cache_hint_selector_material_dark = 2131230791;
+			// aapt resource value: 0x7f08004b
+			public const int abc_background_cache_hint_selector_material_dark = 2131230795;
 			
-			// aapt resource value: 0x7f080048
-			public const int abc_background_cache_hint_selector_material_light = 2131230792;
+			// aapt resource value: 0x7f08004c
+			public const int abc_background_cache_hint_selector_material_light = 2131230796;
 			
-			// aapt resource value: 0x7f080049
-			public const int abc_color_highlight_material = 2131230793;
+			// aapt resource value: 0x7f08004d
+			public const int abc_color_highlight_material = 2131230797;
 			
 			// aapt resource value: 0x7f08000d
 			public const int abc_input_method_navigation_guard = 2131230733;
 			
-			// aapt resource value: 0x7f08004a
-			public const int abc_primary_text_disable_only_material_dark = 2131230794;
-			
-			// aapt resource value: 0x7f08004b
-			public const int abc_primary_text_disable_only_material_light = 2131230795;
-			
-			// aapt resource value: 0x7f08004c
-			public const int abc_primary_text_material_dark = 2131230796;
-			
-			// aapt resource value: 0x7f08004d
-			public const int abc_primary_text_material_light = 2131230797;
-			
 			// aapt resource value: 0x7f08004e
-			public const int abc_search_url_text = 2131230798;
+			public const int abc_primary_text_disable_only_material_dark = 2131230798;
+			
+			// aapt resource value: 0x7f08004f
+			public const int abc_primary_text_disable_only_material_light = 2131230799;
+			
+			// aapt resource value: 0x7f080050
+			public const int abc_primary_text_material_dark = 2131230800;
+			
+			// aapt resource value: 0x7f080051
+			public const int abc_primary_text_material_light = 2131230801;
+			
+			// aapt resource value: 0x7f080052
+			public const int abc_search_url_text = 2131230802;
 			
 			// aapt resource value: 0x7f08000e
 			public const int abc_search_url_text_normal = 2131230734;
@@ -2467,11 +2467,14 @@ namespace XamFormsMarvel.Droid
 			// aapt resource value: 0x7f080010
 			public const int abc_search_url_text_selected = 2131230736;
 			
-			// aapt resource value: 0x7f08004f
-			public const int abc_secondary_text_material_dark = 2131230799;
+			// aapt resource value: 0x7f080053
+			public const int abc_secondary_text_material_dark = 2131230803;
 			
-			// aapt resource value: 0x7f080050
-			public const int abc_secondary_text_material_light = 2131230800;
+			// aapt resource value: 0x7f080054
+			public const int abc_secondary_text_material_light = 2131230804;
+			
+			// aapt resource value: 0x7f080049
+			public const int accent = 2131230793;
 			
 			// aapt resource value: 0x7f080011
 			public const int accent_material_dark = 2131230737;
@@ -2620,6 +2623,12 @@ namespace XamFormsMarvel.Droid
 			// aapt resource value: 0x7f080034
 			public const int material_grey_900 = 2131230772;
 			
+			// aapt resource value: 0x7f080047
+			public const int primary = 2131230791;
+			
+			// aapt resource value: 0x7f080048
+			public const int primaryDark = 2131230792;
+			
 			// aapt resource value: 0x7f080035
 			public const int primary_dark_material_dark = 2131230773;
 			
@@ -2668,17 +2677,20 @@ namespace XamFormsMarvel.Droid
 			// aapt resource value: 0x7f080044
 			public const int switch_thumb_disabled_material_light = 2131230788;
 			
-			// aapt resource value: 0x7f080051
-			public const int switch_thumb_material_dark = 2131230801;
+			// aapt resource value: 0x7f080055
+			public const int switch_thumb_material_dark = 2131230805;
 			
-			// aapt resource value: 0x7f080052
-			public const int switch_thumb_material_light = 2131230802;
+			// aapt resource value: 0x7f080056
+			public const int switch_thumb_material_light = 2131230806;
 			
 			// aapt resource value: 0x7f080045
 			public const int switch_thumb_normal_material_dark = 2131230789;
 			
 			// aapt resource value: 0x7f080046
 			public const int switch_thumb_normal_material_light = 2131230790;
+			
+			// aapt resource value: 0x7f08004a
+			public const int window_background = 2131230794;
 			
 			static Color()
 			{
@@ -4459,6 +4471,12 @@ namespace XamFormsMarvel.Droid
 			
 			// aapt resource value: 0x7f070006
 			public const int CardView_Light = 2131165190;
+			
+			// aapt resource value: 0x7f070144
+			public const int MyTheme = 2131165508;
+			
+			// aapt resource value: 0x7f070145
+			public const int MyTheme_Base = 2131165509;
 			
 			// aapt resource value: 0x7f070025
 			public const int Platform_AppCompat = 2131165221;
