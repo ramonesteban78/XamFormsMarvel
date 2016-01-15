@@ -34,13 +34,13 @@
 			            <OnPlatform.WinPhone>70</OnPlatform.WinPhone>
 			        </OnPlatform>
 			    </ListView.RowHeight>-->
-			    <ListView.ItemTemplate>
+			    <!--<ListView.ItemTemplate>
 			    	<DataTemplate>
 			    		<ViewCell>
 							<local:CharacterTemplate />
 						</ViewCell>
 			    	</DataTemplate>
-			    </ListView.ItemTemplate>
+			    </ListView.ItemTemplate>-->
 			</ListView>
 
 			<ActivityIndicator Grid.RowSpan="2" IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}"
