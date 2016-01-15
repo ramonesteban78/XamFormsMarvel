@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using XamFormsMarvel.ViewModels;
 using Xamarin.Forms.Xaml;
-
+using XamFormsMarvel.Renderer;
 
 namespace XamFormsMarvel.Views
 {
@@ -46,30 +46,42 @@ namespace XamFormsMarvel.Views
             //    };
             //});  
 
-//            var dt = new DataTemplate(typeof(ImageCell));
-//            dt.SetBinding(ImageCell.ImageSourceProperty, "Thumbnail");
-//            dt.SetBinding(ImageCell.TextProperty, "Name");
+            //            var dt = new DataTemplate(typeof(ImageCell));
+            //            dt.SetBinding(ImageCell.ImageSourceProperty, "Thumbnail");
+            //            dt.SetBinding(ImageCell.TextProperty, "Name");
 
-			// Navigation to detail page
-			this.listCharacters.ItemSelected += (object sender, SelectedItemChangedEventArgs e) => {
-				var character = (CharacterItemViewModel)e.SelectedItem;
-				var detailVm = new DetailViewModel(character);
+            // Navigation to detail page
+            this.listCharacters.ItemSelected += (object sender, SelectedItemChangedEventArgs e) =>
+            {
+                var character = (CharacterItemViewModel)e.SelectedItem;
+                var detailVm = new DetailViewModel(character);
 
-				var detailView = new DetailView(detailVm);
+                var detailView = new DetailView(detailVm);
 
-				this.Navigation.PushAsync(detailView);
-			};
-
-
+                this.Navigation.PushAsync(detailView);
+            };
 
 
-//            listCharacters.ItemTemplate = dt;
-//
-//            listCharacters.SetBinding(ListView.ItemsSourceProperty, new Binding("CharacterList"));
+            Device.OnPlatform(WinPhone: () =>
+                       listCharacters.ItemTemplate = new DataTemplate(() =>
+            {
+                var nativeCell = new NativeCell();
+                nativeCell.SetBinding(NativeCell.NameProperty, "Name");
+                nativeCell.SetBinding(NativeCell.ThumbnailProperty, "Thumbnail");
+
+                return nativeCell;
+            }));
+
+
+
+
+            //            listCharacters.ItemTemplate = dt;
+            //
+            //            listCharacters.SetBinding(ListView.ItemsSourceProperty, new Binding("CharacterList"));
 
             _vm = new FirstViewModel();
 
-            
+
 
             BindingContext = _vm;
             _vm.LoadData();

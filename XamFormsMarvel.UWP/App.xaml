@@ -5,4 +5,21 @@
     xmlns:local="using:XamFormsMarvel.UWP"
     RequestedTheme="Light">
 
+    <Application.Resources>
+        <DataTemplate x:Key="ListViewItemTemplate">
+            <Grid VerticalAlignment="Center" Margin="10,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Ellipse VerticalAlignment="Center" Width="50" Height="50">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="{Binding Thumbnail}" />
+                    </Ellipse.Fill>
+                </Ellipse>
+                <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" FontSize="22" Text="{Binding Name}" />
+            </Grid>
+        </DataTemplate>
+    </Application.Resources>
+
 </Application>
