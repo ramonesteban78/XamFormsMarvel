@@ -7,7 +7,6 @@ using Xamarin.UITest.Queries;
 
 namespace XamFormsMarvel.UITests
 {
-	[TestFixture (Platform.Android)]
 	[TestFixture (Platform.iOS)]
 	public class Tests
 	{
@@ -26,12 +25,24 @@ namespace XamFormsMarvel.UITests
 		}
 
 		[Test]
-		public void WelcomeTextIsDisplayed ()
+		public void NewTest ()
 		{
-			AppResult[] results = app.WaitForElement (c => c.Marked ("Welcome to Xamarin Forms!"));
-			app.Screenshot ("Welcome screen.");
+			app.Tap(x => x.Class("Xamarin_Forms_Platform_iOS_LabelRenderer").Index(1));
+			app.Screenshot("Tapped on view Xamarin_Forms_Platform_iOS_LabelRenderer");
+			app.Tap(x => x.Text("Marvel Characters"));
+			app.Screenshot("Tapped on view UILabel with Text: 'Marvel Characters'");
+			app.Tap(x => x.ClassFull("_UISearchBarSearchFieldBackgroundView"));
+			app.Screenshot("Tapped on view _UISearchBarSearchFieldBackgroundView");
+			app.EnterText(x => x.Class("UISearchBarTextField"), "Thor");
+			app.Screenshot("Entered 'Thor' into view UISearchBarTextField");
 
-			Assert.IsTrue (results.Any ());
+			app.PressEnter ();
+
+			app.Tap(x => x.Class("Xamarin_Forms_Platform_iOS_LabelRenderer"));
+			app.Screenshot("Entered 'Thor' into view UISearchBarTextField");
+			app.Screenshot("Tapped on view Xamarin_Forms_Platform_iOS_LabelRenderer");
+			app.Tap(x => x.Text("Marvel Characters"));
+			app.Screenshot("Tapped on view UILabel with Text: 'Marvel Characters'");
 		}
 	}
 }
