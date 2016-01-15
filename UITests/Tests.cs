@@ -44,6 +44,8 @@ namespace XamFormsMarvel.UITests
 			app.Tap(x => x.Text("Marvel Characters"));
 			app.Screenshot("Tapped on view UILabel with Text: 'Marvel Characters'");
 		}
+
+
 	}
 }
 

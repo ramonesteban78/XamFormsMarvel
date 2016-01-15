@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XamFormsMarvel.Views.DetailView"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XamFormsMarvel.Views.DetailView"
+xmlns:control="clr-namespace:XamFormsMarvel.Controls;assembly=XamFormsMarvel"
 Title="{Binding Character.Name}">
 	<ContentPage.Content>
 		<Grid  BackgroundColor="#F44336">
@@ -8,7 +10,20 @@ Title="{Binding Character.Name}">
 				<RowDefinition Height="Auto"></RowDefinition>
 			</Grid.RowDefinitions>
 
-			<Image Source="{Binding Character.Thumbnail}" Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill"></Image>
+<!--			<control.ImageCircle Source="{Binding Character.Thumbnail}" 
+				Grid.Row="0" 
+				HorizontalOptions="FillAndExpand" 
+				VerticalOptions="FillAndExpand" 
+				Aspect="Fill">
+			</control.ImageCircle>-->
+
+
+			<Image Source="{Binding Character.Thumbnail}" 
+				Grid.Row="0" 
+				HorizontalOptions="FillAndExpand" 
+				VerticalOptions="FillAndExpand" 
+				Aspect="Fill">
+			</Image>
 
 			<ContentView Grid.Row="1" Padding="5,5,5,5">
 				<Label Text="{Binding Character.Description}" 
