@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XamFormsMarvel.Views.CharacterTemplate">
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="XamFormsMarvel.Views.CharacterTemplate"
+	xmlns:control="clr-namespace:XamFormsMarvel.Controls;assembly=XamFormsMarvel">
 	<ContentView.Content>
 		<StackLayout Spacing="0" Padding="0">
 			<Grid Style="{DynamicResource CardStyle}">
@@ -8,7 +11,8 @@
 					<ColumnDefinition Width="*"/>
 					<ColumnDefinition Width="5"/>
 				</Grid.ColumnDefinitions>
-				<Image Source="{Binding Thumbnail}" Grid.Column="0"></Image>
+<!--				<control.ImageCircle Source="{Binding Thumbnail}" Grid.Column="0"></control.ImageCircle>-->
+				<Image Source="{Binding Thumbnail}" Grid.Column="0" WidthRequest="60" HeightRequest="60"></Image>
 				<StackLayout Grid.Column="1" Spacing="0" Padding="0,5" Orientation="Vertical">
 					<Label Text="{Binding Name}" 
 						HorizontalOptions="FillAndExpand" 
