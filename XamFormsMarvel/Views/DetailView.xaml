@@ -7,6 +7,7 @@ Title="{Binding Character.Name}">
 		<Grid  BackgroundColor="#F44336">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="320"></RowDefinition>
+				<RowDefinition Height="*"></RowDefinition>
 				<RowDefinition Height="Auto"></RowDefinition>
 			</Grid.RowDefinitions>
 
@@ -32,6 +33,11 @@ Title="{Binding Character.Name}">
 				FontSize="13"
 				TextColor="#FFFFFF"></Label>
 			</ContentView>
+
+			<StackLayout Padding="10" Grid.Row="2">
+				<Button Text="Open Web" TextColor="White" Command="{Binding OpenWeb}"></Button>
+			</StackLayout>
+
 
 		</Grid>
 	</ContentPage.Content>
