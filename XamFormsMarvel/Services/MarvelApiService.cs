@@ -37,7 +37,6 @@ namespace XamFormsMarvel.Services
 		{
 
 			HttpClient client = new HttpClient ();
-			HttpContent content = null;
 
 			string url = $"{MarvelDns}characters{MarvelCredentials}{filter}";
 

@@ -11,9 +11,10 @@ namespace XamFormsMarvel.ViewModels
     public class FirstViewModel : ViewModelBase
     {
 		private readonly IMarvelApiService _marvelService;
-		public FirstViewModel ()
+
+		public FirstViewModel (IMarvelApiService marvelService = null)
 		{
-			_marvelService = DependencyService.Get<IMarvelApiService>();
+			_marvelService = marvelService ?? DependencyService.Get<IMarvelApiService>();
 		}
 
 		#region SearchText
@@ -55,8 +56,7 @@ namespace XamFormsMarvel.ViewModels
 		public ICommand SearchByName {
 			get {
 				return _SearchByName ?? (_SearchByName = new Command (
-					async () => await ExecuteSearchByNameCommand (),
-					ValidateSearchByNameCommand)); 
+					async () => await ExecuteSearchByNameCommand ())); 
 			}
 		}
 
@@ -65,37 +65,7 @@ namespace XamFormsMarvel.ViewModels
 			await LoadData (SearchText);
 		}
 
-		private bool ValidateSearchByNameCommand ()
-		{
-			return true;
-		}
-
 		#endregion
-
-//		#region CharacterSelection Command
-//
-//		private ICommand _CharacterSelection;
-//
-//		public ICommand CharacterSelection {
-//			get {
-//				return _CharacterSelection ?? (_CharacterSelection = new Command<CharacterItemViewModel> (
-//					ExecuteCharacterSelectionCommand,
-//					ValidateCharacterSelectionCommand)); 
-//			}
-//		}
-//
-//		private void ExecuteCharacterSelectionCommand (CharacterItemViewModel character)
-//		{
-//			var vm = new DetailViewModel (character);
-//			this.Navigation.PushAsync(
-//		}
-//
-//		private bool ValidateCharacterSelectionCommand ()
-//		{
-//			return true;
-//		}
-//
-//		#endregion
 
 		#region LoadData
 

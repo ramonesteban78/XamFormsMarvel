@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using XamFormsMarvel.ViewModels;
 using Xamarin.Forms.Xaml;
 using XamFormsMarvel.Renderer;
+using System.Threading.Tasks;
 
 namespace XamFormsMarvel.Views
 {
@@ -15,40 +16,7 @@ namespace XamFormsMarvel.Views
 
         public FirstView()
         {
-            InitializeComponent();
-
-            //var image = new Image()
-            //{
-            //    HeightRequest = 80,
-            //    WidthRequest = 80
-            //};
-            //image.SetBinding(Image.SourceProperty, "Thumbnail");
-            //var label = new Label()
-            //{
-            //    VerticalTextAlignment = TextAlignment.Start,
-            //    HorizontalTextAlignment = TextAlignment.Start,
-            //    VerticalOptions = LayoutOptions.FillAndExpand,
-            //    HorizontalOptions = LayoutOptions.FillAndExpand
-            //};
-            //label.SetBinding(Label.TextProperty, "Name");
-            //var stack = new StackLayout()
-            //{
-            //    Orientation = StackOrientation.Horizontal
-            //};
-            //stack.Children.Add(image);
-            //stack.Children.Add(label);
-
-            //var dt = new DataTemplate(() =>
-            //{
-            //    return new ViewCell()
-            //    {
-            //        View = stack
-            //    };
-            //});  
-
-            //            var dt = new DataTemplate(typeof(ImageCell));
-            //            dt.SetBinding(ImageCell.ImageSourceProperty, "Thumbnail");
-            //            dt.SetBinding(ImageCell.TextProperty, "Name");
+			InitializeComponent();
 
             // Navigation to detail page
             this.listCharacters.ItemSelected += (object sender, SelectedItemChangedEventArgs e) =>
@@ -72,27 +40,13 @@ namespace XamFormsMarvel.Views
                 return nativeCell;
             }));
 
-
-
-
-            //            listCharacters.ItemTemplate = dt;
-            //
-            //            listCharacters.SetBinding(ListView.ItemsSourceProperty, new Binding("CharacterList"));
-
             _vm = new FirstViewModel();
 
-
-
             BindingContext = _vm;
-            _vm.LoadData();
+			Task.Run(async () => await _vm.LoadData());
+            
         }
 
-
-        protected override async void OnAppearing()
-        {
-            base.OnAppearing();
-
-        }
     }
 }
 

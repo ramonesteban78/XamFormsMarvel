@@ -10,10 +10,10 @@ namespace XamFormsMarvel.Views
 	[XamlCompilation (XamlCompilationOptions.Compile)]
 	public partial class DetailView : ContentPage
 	{
-		public DetailView (DetailViewModel vm)
+		public DetailView (DetailViewModel detailvm)
 		{
 			InitializeComponent ();
-			BindingContext = vm;
+			this.BindingContext = detailvm;
 		}
 	}
 }

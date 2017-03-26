@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XamFormsMarvel.Views.DetailView"
 xmlns:control="clr-namespace:XamFormsMarvel.Controls;assembly=XamFormsMarvel"
@@ -6,8 +6,8 @@ Title="{Binding Character.Name}">
 	<ContentPage.Content>
 		<Grid  BackgroundColor="#F44336">
 			<Grid.RowDefinitions>
-				<RowDefinition Height="320"></RowDefinition>
-				<RowDefinition Height="*"></RowDefinition>
+				<RowDefinition Height="65*"></RowDefinition>
+				<RowDefinition Height="30*"></RowDefinition>
 				<RowDefinition Height="Auto"></RowDefinition>
 			</Grid.RowDefinitions>
 
