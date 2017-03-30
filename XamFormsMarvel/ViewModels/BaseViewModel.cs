@@ -1,12 +1,13 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 
 namespace XamFormsMarvel.ViewModels
 {
-	public class ViewModelBase : INotifyPropertyChanged
+	public class BaseViewModel : INotifyPropertyChanged
 	{
-		public ViewModelBase ()
+		public BaseViewModel ()
 		{
 		}
 
@@ -14,7 +15,7 @@ namespace XamFormsMarvel.ViewModels
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
-		protected void OnPropertyChanged(string propertyName)
+		protected void RaisePropertyChanged([CallerMemberName] string propertyName = null)
 		{
 			if (PropertyChanged != null)
 				PropertyChanged(this, 
@@ -33,13 +34,16 @@ namespace XamFormsMarvel.ViewModels
 			}
 			set {
 				_IsBusy = value;
-				OnPropertyChanged ("IsBusy");
+				RaisePropertyChanged();
 			}
 		}
 
 		#endregion
 
 		#region Title
+
+		private readonly string _Title2;
+		public string Title2 => _Title2;
 
 		private string _Title;
 
@@ -49,7 +53,7 @@ namespace XamFormsMarvel.ViewModels
 			}
 			set {
 				_Title = value;
-				OnPropertyChanged ("Title");
+				RaisePropertyChanged();
 			}
 		}
 

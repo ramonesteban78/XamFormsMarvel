@@ -5,16 +5,23 @@ using System.Windows.Input;
 using System.Threading.Tasks;
 using XamFormsMarvel.Services;
 using Xamarin.Forms;
+using System;
 
 namespace XamFormsMarvel.ViewModels
 {
-    public class FirstViewModel : ViewModelBase
+    public class FirstViewModel : BaseViewModel
     {
 		private readonly IMarvelApiService _marvelService;
 
 		public FirstViewModel (IMarvelApiService marvelService = null)
 		{
 			_marvelService = marvelService ?? DependencyService.Get<IMarvelApiService>();
+
+		}
+
+		public async Task Init()
+		{
+			await LoadData();
 		}
 
 		#region SearchText
@@ -27,7 +34,7 @@ namespace XamFormsMarvel.ViewModels
 			}
 			set {
 				_SearchText = value;
-				OnPropertyChanged ("SearchText");
+				RaisePropertyChanged();
 			}
 		}
 
@@ -43,7 +50,7 @@ namespace XamFormsMarvel.ViewModels
 			}
 			set {
 				_CharacterList = value;
-				OnPropertyChanged ("CharacterList");
+				RaisePropertyChanged();
 			}
 		}
 
@@ -65,11 +72,17 @@ namespace XamFormsMarvel.ViewModels
 			await LoadData (SearchText);
 		}
 
+		//bool CanExecuteSearchByNameCommand()
+		//{
+		//	// Condición para poder ejecutar el commando
+		//	return SearchText?.Length > 0;
+		//}
+
 		#endregion
 
 		#region LoadData
 
-		public async Task LoadData (string filter = null, int limit = 0, int offset = 0)
+		private async Task LoadData (string filter = null, int limit = 0, int offset = 0)
 		{
 			IsBusy = true;
 

@@ -2,13 +2,20 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 	x:Class="XamFormsMarvel.Views.CharacterTemplate"
-	xmlns:control="clr-namespace:XamFormsMarvel.Controls;assembly=XamFormsMarvel">
+	xmlns:control="clr-namespace:XamFormsMarvel.Controls;assembly=XamFormsMarvel"
+	xmlns:local="clr-namespace:XamFormsMarvel.Converters;assembly=XamFormsMarvel">
+	<ContentView.Resources>
+		<ResourceDictionary>
+			<local:DescriptionToImageValueConverter x:Key="okWrongConverter"></local:DescriptionToImageValueConverter>
+		</ResourceDictionary>
+	</ContentView.Resources>
 	<ContentView.Content>
 		<StackLayout Spacing="0" Padding="0">
 			<Grid Style="{DynamicResource CardStyle}">
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="90"/>
 					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="20"/>
 					<ColumnDefinition Width="5"/>
 				</Grid.ColumnDefinitions>
 				<!--<control.ImageCircle Source="{Binding Thumbnail}" Grid.Column="0"></control.ImageCircle>-->
@@ -21,6 +28,7 @@
 						HorizontalTextAlignment="Start"
 						Style="{DynamicResource NameStyle}"></Label>
 				</StackLayout>
+				<Image Grid.Column="2" Source="{Binding Description, Converter={StaticResource okWrongConverter}}"></Image>
 			</Grid>
 		</StackLayout>
 	</ContentView.Content>

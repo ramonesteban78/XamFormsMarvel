@@ -117,6 +117,14 @@
     <ImageAsset Include="Resources\Images.xcassets\marvel.imageset\marvel_logo~universal%401x.png" />
     <ImageAsset Include="Resources\Images.xcassets\marvel.imageset\marvel_logo~universal%402x.png" />
     <ImageAsset Include="Resources\Images.xcassets\marvel.imageset\marvel_logo~universal%403x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\ok.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\ok.imageset\ok~universal%401x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\ok.imageset\ok~universal%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\ok.imageset\ok~universal%403x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\wrong.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\wrong.imageset\wrong~universal%401x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\wrong.imageset\wrong~universal%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\wrong.imageset\wrong~universal%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
@@ -137,6 +145,8 @@
   <ItemGroup />
   <ItemGroup>
     <Folder Include="Resources\Images.xcassets\marvel.imageset\" />
+    <Folder Include="Resources\Images.xcassets\ok.imageset\" />
+    <Folder Include="Resources\Images.xcassets\wrong.imageset\" />
   </ItemGroup>
   <Import Project="..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
 </Project>

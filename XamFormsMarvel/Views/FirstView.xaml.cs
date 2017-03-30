@@ -41,9 +41,8 @@ namespace XamFormsMarvel.Views
             }));
 
             _vm = new FirstViewModel();
-
             BindingContext = _vm;
-			Task.Run(async () => await _vm.LoadData());
+			Task.Run(async () => await _vm.Init());
             
         }
 

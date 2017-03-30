@@ -2,7 +2,7 @@
 
 namespace XamFormsMarvel.ViewModels
 {
-	public class CharacterItemViewModel : ViewModelBase
+	public class CharacterItemViewModel : BaseViewModel
 	{
 		
 		#region Id
@@ -15,7 +15,7 @@ namespace XamFormsMarvel.ViewModels
 			}
 			set {
 				_Id = value;
-				OnPropertyChanged ("Id");
+				RaisePropertyChanged();
 			}
 		}
 
@@ -31,7 +31,7 @@ namespace XamFormsMarvel.ViewModels
 			}
 			set {
 				_Name = value;
-				OnPropertyChanged ("Name");
+				RaisePropertyChanged();
 			}
 		}
 
@@ -47,7 +47,7 @@ namespace XamFormsMarvel.ViewModels
 			}
 			set {
 				_Thumbnail = value;
-				OnPropertyChanged ("Thumbnail");
+				RaisePropertyChanged();
 			}
 		}
 
@@ -63,7 +63,7 @@ namespace XamFormsMarvel.ViewModels
 			}
 			set {
 				_Description = value;
-				OnPropertyChanged ("Description");
+				RaisePropertyChanged();
 			}
 		}
 

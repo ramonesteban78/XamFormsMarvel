@@ -6,14 +6,14 @@ using System.Windows.Input;
 
 namespace XamFormsMarvel.ViewModels
 {
-	public class DetailViewModel : ViewModelBase
+	public class DetailViewModel : BaseViewModel
 	{
 		private readonly IOpenWebService _openWebService;
 
-		public DetailViewModel (CharacterItemViewModel character)
+		public DetailViewModel (CharacterItemViewModel character, IOpenWebService openWebService = null)
 		{
 			Character = character;
-			_openWebService = DependencyService.Get<IOpenWebService> ();
+			_openWebService = openWebService ?? DependencyService.Get<IOpenWebService>();
 		}
 
 		#region Character
@@ -26,12 +26,11 @@ namespace XamFormsMarvel.ViewModels
 			}
 			set {
 				_Character = value;
-				OnPropertyChanged ("Character");
+				RaisePropertyChanged();
 			}
 		}
 
 		#endregion
-
 
 		#region OpenWeb Command
 
@@ -56,7 +55,6 @@ namespace XamFormsMarvel.ViewModels
 		}
 
 		#endregion
-
 
 	}
 }
