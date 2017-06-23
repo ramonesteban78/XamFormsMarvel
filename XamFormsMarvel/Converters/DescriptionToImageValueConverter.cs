@@ -16,18 +16,17 @@ namespace XamFormsMarvel.Converters
 
 			if (string.IsNullOrEmpty(strValue))
 			{
-				return ImageSource.FromFile("wrong");
+				return ImageSource.FromFile("wrong.png");
 			}
 			else
 			{
-				return ImageSource.FromFile("ok");
+				return ImageSource.FromFile("ok.png");
 			}
-				
 		}
 
 		public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
 		{
-			throw new NotImplementedException();
+			return null;
 		}
 	}
 }

@@ -29,16 +29,22 @@ namespace XamFormsMarvel.Views
                 this.Navigation.PushAsync(detailView);
             };
 
-
-            Device.OnPlatform(WinPhone: () =>
-                       listCharacters.ItemTemplate = new DataTemplate(() =>
+            switch(Device.RuntimePlatform)
             {
-                var nativeCell = new NativeCell();
-                nativeCell.SetBinding(NativeCell.NameProperty, "Name");
-                nativeCell.SetBinding(NativeCell.ThumbnailProperty, "Thumbnail");
+                case Device.UWP:
+                    listCharacters.ItemTemplate = new DataTemplate(() =>
+		            {
+		                var nativeCell = new NativeCell();
+		                nativeCell.SetBinding(NativeCell.NameProperty, "Name");
+		                nativeCell.SetBinding(NativeCell.ThumbnailProperty, "Thumbnail");
 
-                return nativeCell;
-            }));
+		                return nativeCell;
+		            });
+                    break;
+                case Device.macOS:
+                    searchBar.FontSize = 14;
+                    break;
+            }
 
             _vm = new FirstViewModel();
             BindingContext = _vm;

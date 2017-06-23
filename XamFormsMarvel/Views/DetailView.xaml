@@ -2,14 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XamFormsMarvel.Views.DetailView"
 xmlns:control="clr-namespace:XamFormsMarvel.Controls;assembly=XamFormsMarvel"
-Title="{Binding Character.Name}">
+Title="{Binding Character.Name}" BackgroundColor="#F44336">
 	<ContentPage.Content>
-		<Grid  BackgroundColor="#F44336">
+		<Grid  BackgroundColor="#F44336" HorizontalOptions="Center">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="65*"></RowDefinition>
 				<RowDefinition Height="30*"></RowDefinition>
 				<RowDefinition Height="Auto"></RowDefinition>
 			</Grid.RowDefinitions>
+            <Grid.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="iOS">0,0,0,0</On>
+                    <On Platform="Android">0,0,0,0</On>
+                    <On Platform="UWP">0,0,0,0</On>
+                    <On Platform="macOS">250,0,250,0</On>
+                </OnPlatform>
+            </Grid.Margin>
 
 <!--			<control.ImageCircle Source="{Binding Character.Thumbnail}" 
 				Grid.Row="0" 
@@ -28,14 +36,15 @@ Title="{Binding Character.Name}">
 
 			<ContentView Grid.Row="1" Padding="5,5,5,5">
 				<Label Text="{Binding Character.Description}" 
-				HorizontalOptions="FillAndExpand" 
-				VerticalOptions="FillAndExpand" 
+				HorizontalOptions="Center" 
+				VerticalOptions="Start" 
 				FontSize="13"
-				TextColor="#FFFFFF"></Label>
+				TextColor="#FFFFFF">
+                </Label>
 			</ContentView>
 
 			<StackLayout Padding="10" Grid.Row="2">
-				<Button Text="Open Web" TextColor="White" Command="{Binding OpenWeb}"></Button>
+				<Button Text="Open Web" TextColor="#F44336" Command="{Binding OpenWeb}" BackgroundColor="White"></Button>
 			</StackLayout>
 
 
